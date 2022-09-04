@@ -1,0 +1,230 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:splashscreen2/theme.dart';
+
+class detailpage extends StatelessWidget {
+  const detailpage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: kColor9,
+      body: Stack(
+        children: [
+          Image.asset(
+            'assets/image_background.png',
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 95),
+            child: Image.asset('assets/detail_produk1.png'),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              margin: EdgeInsets.only(
+                top: 66,
+                left: 20,
+              ),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: kColor9,
+                border: Border.all(
+                  color: kColor2,
+                ),
+              ),
+              child: Icon(
+                Icons.chevron_left,
+              ),
+            ),
+          ),
+          SizedBox.expand(
+            child: DraggableScrollableSheet(
+              initialChildSize: 0.4,
+              minChildSize: 0.4,
+              maxChildSize: 0.95,
+              builder: (context, scrollController) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.vertical(
+                      top: Radius.circular(40),
+                    ),
+                    color: kColor10,
+                  ),
+                  child: SingleChildScrollView(
+                      child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Center(
+                            child: Container(
+                              width: 30,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: kColor9,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Happy Birthday',
+                                style: kColor3Style.copyWith(
+                                    fontSize: 24, fontWeight: semibold),
+                              ),
+                              Text(
+                                'Rp. 35.000',
+                                style: kColor3Style.copyWith(
+                                  fontSize: 24,
+                                  fontWeight: reguler,
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Text(
+                            'Gift Series',
+                            style: kColor3Style.copyWith(
+                              fontSize: 18,
+                              fontWeight: reguler,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Container(
+                            height: 50,
+                            child: Stack(
+                              alignment: Alignment.centerLeft,
+                              children: [
+                                Row(
+                                  children: [
+                                    // colorindikator(Color(0xffC4C4C4), 0),
+                                    // colorindikator(Color(0xffC4C4C4), 1),
+                                    // colorindikator(Color(0xffC4C4C4), 2),
+                                    // colorindikator(Color(0xffC4C4C4), 3),
+                                    // colorindikator(Color(0xffC4C4C4), 4),
+                                    textIndikator(
+                                        '0,025 gram', Color(0xffC4C4C4), 0),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ]),
+                  )),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: kColor9,
+          boxShadow: [
+            BoxShadow(
+              color: kColor10,
+              blurRadius: 5,
+              offset: Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Row(children: [
+          Container(
+            width: 56,
+            height: 49,
+            decoration: BoxDecoration(
+              color: kColor10,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: Image.asset(
+                'assets/image_cart.png',
+                width: 24,
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 16,
+          ),
+          Expanded(
+            child: Container(
+              width: 265,
+              height: 56,
+              decoration: BoxDecoration(
+                color: kColor3,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Center(
+                  child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Buy Now',
+                  style: kColor9style.copyWith(
+                    fontSize: 18,
+                    fontWeight: semibold,
+                  ),
+                ),
+              )),
+            ),
+          ),
+        ]),
+      ),
+    );
+  }
+
+  Widget colorindikator(Color color, int index) {
+    return Container(
+      height: 50,
+      width: 50,
+      margin: EdgeInsets.only(right: 10),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: color,
+      ),
+    );
+  }
+
+  Widget textIndikator(String text, Color color, int index) {
+    return Container(
+      height: 50,
+      width: 50,
+      margin: EdgeInsets.only(right: 10),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color,
+            ),
+          ),
+          Text(
+            text,
+            style: kColor3Style.copyWith(
+              fontSize: 11,
+              fontWeight: semibold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
