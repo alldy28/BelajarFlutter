@@ -3,8 +3,16 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:splashscreen2/theme.dart';
 
-class detailpage extends StatelessWidget {
+class detailpage extends StatefulWidget {
   const detailpage({Key? key}) : super(key: key);
+
+  @override
+  State<detailpage> createState() => _detailpageState();
+}
+
+class _detailpageState extends State<detailpage> {
+  Color IndikatorColor = Color(0xffC4C4C4);
+  double IndikatorMargin = 5;
 
   @override
   Widget build(BuildContext context) {
@@ -120,8 +128,43 @@ class detailpage extends StatelessWidget {
                                     // colorindikator(Color(0xffC4C4C4), 4),
                                     textIndikator(
                                         '0,025 gram', Color(0xffC4C4C4), 0),
+                                    textIndikator(
+                                        '0,05 gram', Color(0xffC4C4C4), 1),
+                                    textIndikator(
+                                        '0,1 gram', Color(0xffC4C4C4), 2),
+                                    textIndikator(
+                                        '0,25 gram', Color(0xffC4C4C4), 3),
+                                    textIndikator(
+                                        '0,5 gram', Color(0xffC4C4C4), 4),
                                   ],
-                                )
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  margin: EdgeInsets.only(
+                                    left: IndikatorMargin,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: IndikatorColor,
+                                    border: Border.all(
+                                      width: 3,
+                                      color: kColor9,
+                                    ),
+                                  ),
+                                  child: Container(
+                                    width: 20,
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 12),
+                                    child: Text(
+                                      'Pilih',
+                                      style: kColor3Style.copyWith(
+                                        fontSize: 7,
+                                        fontWeight: semibold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           )
@@ -190,40 +233,36 @@ class detailpage extends StatelessWidget {
     );
   }
 
-  Widget colorindikator(Color color, int index) {
-    return Container(
-      height: 50,
-      width: 50,
-      margin: EdgeInsets.only(right: 10),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: color,
-      ),
-    );
-  }
-
+  // Widget colorindikator(Color color, int index) {
   Widget textIndikator(String text, Color color, int index) {
-    return Container(
-      height: 50,
-      width: 50,
-      margin: EdgeInsets.only(right: 10),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: color,
+    return GestureDetector(
+      onTap: (() {
+        setState(() {
+          IndikatorColor = color;
+          IndikatorMargin = 5 + (index * 60);
+        });
+      }),
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color,
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 5),
+        height: 50,
+        width: 50,
+        margin: EdgeInsets.only(right: 10),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Text(
+              text,
+              style: kColor3Style.copyWith(
+                fontSize: 7,
+                fontWeight: semibold,
+              ),
             ),
-          ),
-          Text(
-            text,
-            style: kColor3Style.copyWith(
-              fontSize: 11,
-              fontWeight: semibold,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
