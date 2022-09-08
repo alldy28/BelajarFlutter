@@ -10,6 +10,7 @@ class detailpage extends StatefulWidget {
   State<detailpage> createState() => _detailpageState();
 }
 
+//DetailPage
 class _detailpageState extends State<detailpage> {
   Color IndikatorColor = Color(0xffC4C4C4);
   double IndikatorMargin = 5;
