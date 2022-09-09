@@ -14,6 +14,7 @@ class detailpage extends StatefulWidget {
 class _detailpageState extends State<detailpage> {
   Color IndikatorColor = Color(0xffC4C4C4);
   double IndikatorMargin = 5;
+  int currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class _detailpageState extends State<detailpage> {
           ),
           Container(
             margin: EdgeInsets.only(top: 95),
-            child: Image.asset('assets/detail_produk1.png'),
+            child: Image.asset('assets/detail_produk$currentIndex.png'),
           ),
           GestureDetector(
             onTap: () {
@@ -139,7 +140,8 @@ class _detailpageState extends State<detailpage> {
                                         '0,5 gram', Color(0xffC4C4C4), 4),
                                   ],
                                 ),
-                                Container(
+                                AnimatedContainer(
+                                  duration: Duration(milliseconds: 200),
                                   width: 40,
                                   height: 40,
                                   margin: EdgeInsets.only(
@@ -168,7 +170,21 @@ class _detailpageState extends State<detailpage> {
                                 ),
                               ],
                             ),
-                          )
+                          ),
+                          SizedBox(
+                            height: 16,
+                          ),
+                          Container(
+                            width: 335,
+                            height: 96,
+                            child: Text(
+                              'Bringing new life to an old favourite. We first introduced this chair in the 1950’s. Some 60 years later we brought it back into the range with the same craftsmanship, comfort and appearance. Enjoy!',
+                              style: kColor15style.copyWith(
+                                fontSize: 14,
+                                fontWeight: semibold,
+                              ),
+                            ),
+                          ),
                         ]),
                   )),
                 );
@@ -241,6 +257,7 @@ class _detailpageState extends State<detailpage> {
         setState(() {
           IndikatorColor = color;
           IndikatorMargin = 5 + (index * 60);
+          currentIndex = index + 1;
         });
       }),
       child: Container(

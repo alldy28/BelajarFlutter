@@ -16,6 +16,7 @@ Color kColor11 = Color.fromARGB(255, 100, 74, 247);
 Color kColor12 = Color(0xff61606C);
 Color kColor13 = Color(0xff4B4A54);
 Color kColor14 = Color(0xff353440);
+Color kColor15 = Color(0xff94959B);
 
 TextStyle kColorStyle = GoogleFonts.nunito(color: kColor);
 TextStyle kColor1Style = GoogleFonts.nunito(color: kColor1);
@@ -27,6 +28,7 @@ TextStyle kColor7style = GoogleFonts.nunito(color: kColor7);
 TextStyle kColor2style = GoogleFonts.nunito(color: kColor2);
 TextStyle kColor11style = GoogleFonts.nunito(color: kColor11);
 TextStyle kColor9style = GoogleFonts.nunito(color: kColor9);
+TextStyle kColor15style = GoogleFonts.nunito(color: kColor15);
 
 FontWeight light = FontWeight.w300;
 FontWeight reguler = FontWeight.w400;
