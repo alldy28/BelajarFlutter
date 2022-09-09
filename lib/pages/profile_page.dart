@@ -23,7 +23,7 @@ class _profilepageState extends State<profilepage> {
       child: Scaffold(
         backgroundColor: isLigtmode ? null : kColor14,
         bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(5),
           child: BottomNavigationBar(
             showUnselectedLabels: false,
             showSelectedLabels: false,
