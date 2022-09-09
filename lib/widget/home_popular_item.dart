@@ -29,7 +29,7 @@ class homepopularitem extends StatelessWidget {
         Navigator.pushNamed(context, '/detailpage');
       },
       child: Container(
-        height: 350,
+        height: 301,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
