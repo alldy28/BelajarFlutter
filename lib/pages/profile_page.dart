@@ -104,7 +104,7 @@ class _profilepageState extends State<profilepage> {
                             isLigtmode = !isLigtmode;
                             opacity = 0;
                           });
-                          Timer(Duration(milliseconds: 400), () {
+                          Timer(Duration(milliseconds: 200), () {
                             setState(() {
                               opacity = 1;
                             });
