@@ -265,7 +265,7 @@ class _detailpageState extends State<detailpage> {
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [kColor9.withOpacity(0.6), kColor9],
+                      colors: [kColor9.withOpacity(0.5), kColor9],
                     ),
                   ),
                   child: Column(
