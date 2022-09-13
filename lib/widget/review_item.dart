@@ -65,7 +65,16 @@ class reviewitem extends StatelessWidget {
                     color: kColor8,
                   ),
                 ],
-              )
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Text.rich(TextSpan(text: review, style: kColor15style, children: [
+                TextSpan(
+                  text: 'more',
+                  style: kColor3Style,
+                )
+              ]))
             ],
           ))
         ],

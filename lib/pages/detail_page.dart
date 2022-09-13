@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:splashscreen2/theme.dart';
+import 'package:splashscreen2/widget/review_item.dart';
 
 class detailpage extends StatefulWidget {
   const detailpage({Key? key}) : super(key: key);
@@ -264,6 +265,15 @@ class _detailpageState extends State<detailpage> {
                                           SizedBox(
                                             height: 20,
                                           ),
+                                          reviewitem(
+                                              name: 'Lydia Clayton',
+                                              imageUrl: 'assets/review.png',
+                                              review:
+                                                  'Open repair of infrarenal aortic aneurysm or dissection, plus of a repair of associated arterial...more',
+                                              items: [
+                                                'assets/image_produk_list1.png',
+                                                'assets/image_produk_list2.png'
+                                              ]),
                                         ],
                                       )
                                     : SizedBox(),
@@ -276,93 +286,93 @@ class _detailpageState extends State<detailpage> {
           ),
         ],
       ),
-      // bottomNavigationBar: isShowReview
-      //     ? null
-      //     : isExpand
-      // ? Container(
-      //     width: double.infinity,
-      //     height: 315,
-      //     decoration: BoxDecoration(
-      //       gradient: LinearGradient(
-      //         begin: Alignment.topCenter,
-      //         end: Alignment.bottomCenter,
-      //         colors: [kColor9.withOpacity(0.5), kColor9],
-      //       ),
-      //     ),
-      //     child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.end,
-      //       children: [
-      //         TextButton(
-      //           onPressed: () {
-      //             setState(() {
-      //               isShowReview = true;
-      //             });
-      //           },
-      //           child: Text(
-      //             'See More',
-      //             style: kColor11style.copyWith(
-      //               fontSize: 16,
-      //               fontWeight: semibold,
-      //             ),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   )
-      // : Container(
-      //     padding: EdgeInsets.all(20),
-      //     decoration: BoxDecoration(
-      //       borderRadius: BorderRadius.circular(20),
-      //       color: kColor9,
-      //       boxShadow: [
-      //         BoxShadow(
-      //           color: kColor10,
-      //           blurRadius: 5,
-      //           offset: Offset(0, 2),
-      //         ),
-      //       ],
-      //     ),
-      //     child: Row(children: [
-      //       Container(
-      //         width: 56,
-      //         height: 49,
-      //         decoration: BoxDecoration(
-      //           color: kColor10,
-      //           borderRadius: BorderRadius.circular(10),
-      //         ),
-      //         child: Center(
-      //           child: Image.asset(
-      //             'assets/image_cart.png',
-      //             width: 24,
-      //           ),
-      //         ),
-      //       ),
-      //       SizedBox(
-      //         width: 16,
-      //       ),
-      //       Expanded(
-      //         child: Container(
-      //           width: 265,
-      //           height: 56,
-      //           decoration: BoxDecoration(
-      //             color: kColor3,
-      //             borderRadius: BorderRadius.circular(14),
-      //           ),
-      //           child: Center(
-      //               child: TextButton(
-      //             onPressed: () {},
-      //             child: Text(
-      //               'Buy Now',
-      //               style: kColor9style.copyWith(
-      //                 fontSize: 18,
-      //                 fontWeight: semibold,
-      //               ),
-      //             ),
-      //           )),
-      //         ),
-      //       ),
-      //     ]),
-      //   ),
+      bottomNavigationBar: isShowReview
+          ? null
+          : isExpand
+              ? Container(
+                  width: double.infinity,
+                  height: 315,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [kColor9.withOpacity(0.5), kColor9],
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          setState(() {
+                            isShowReview = true;
+                          });
+                        },
+                        child: Text(
+                          'See More',
+                          style: kColor11style.copyWith(
+                            fontSize: 16,
+                            fontWeight: semibold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              : Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: kColor9,
+                    boxShadow: [
+                      BoxShadow(
+                        color: kColor10,
+                        blurRadius: 5,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Row(children: [
+                    Container(
+                      width: 56,
+                      height: 49,
+                      decoration: BoxDecoration(
+                        color: kColor10,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/image_cart.png',
+                          width: 24,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Expanded(
+                      child: Container(
+                        width: 265,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          color: kColor3,
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Center(
+                            child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Buy Now',
+                            style: kColor9style.copyWith(
+                              fontSize: 18,
+                              fontWeight: semibold,
+                            ),
+                          ),
+                        )),
+                      ),
+                    ),
+                  ]),
+                ),
     );
   }
 
