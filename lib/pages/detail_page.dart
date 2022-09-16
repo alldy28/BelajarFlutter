@@ -433,7 +433,5 @@ class _detailpageState extends State<detailpage> {
         ),
       ),
     );
-
-  animatedpos
   }
 }

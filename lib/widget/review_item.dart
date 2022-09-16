@@ -69,12 +69,35 @@ class reviewitem extends StatelessWidget {
               SizedBox(
                 height: 8,
               ),
-              Text.rich(TextSpan(text: review, style: kColor15style, children: [
-                TextSpan(
-                  text: 'more',
-                  style: kColor3Style,
-                )
-              ]))
+              Text.rich(
+                TextSpan(text: review, style: kColor15style, children: [
+                  TextSpan(
+                    text: 'more',
+                    style: kColor3Style,
+                  )
+                ]),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: items
+                      .map(
+                        (item) => Container(
+                          margin: EdgeInsets.only(
+                            right: 20,
+                          ),
+                          child: Image.asset(
+                            item,
+                            height: 72,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
+              )
             ],
           ))
         ],
