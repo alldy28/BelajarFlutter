@@ -78,6 +78,7 @@ class _detailpageState extends State<detailpage> {
                         } else {
                           setState(() {
                             isExpand = false;
+                            isShowReview = false;
                           });
                         }
                       }
@@ -269,10 +270,31 @@ class _detailpageState extends State<detailpage> {
                                               name: 'Lydia Clayton',
                                               imageUrl: 'assets/review.png',
                                               review:
-                                                  'Open repair of infrarenal aortic aneurysm or dissection, plus of a repair of associated arterial...more',
+                                                  'Open repair of infrarenal aortic aneurysm or dissection, plus of a repair of associated arterial...',
                                               items: [
                                                 'assets/image_produk_list1.png',
-                                                'assets/image_produk_list2.png'
+                                                'assets/image_produk_list2.png',
+                                                'assets/image_produk_list3.png',
+                                              ]),
+                                          reviewitem(
+                                              name: 'Lydia Clayton',
+                                              imageUrl: 'assets/review.png',
+                                              review:
+                                                  'Open repair of infrarenal aortic aneurysm or dissection, plus of a repair of associated arterial...',
+                                              items: [
+                                                'assets/image_produk_list1.png',
+                                                'assets/image_produk_list2.png',
+                                                'assets/image_produk_list3.png',
+                                              ]),
+                                          reviewitem(
+                                              name: 'Lydia Clayton',
+                                              imageUrl: 'assets/review.png',
+                                              review:
+                                                  'Open repair of infrarenal aortic aneurysm or dissection, plus of a repair of associated arterial...',
+                                              items: [
+                                                'assets/image_produk_list1.png',
+                                                'assets/image_produk_list2.png',
+                                                'assets/image_produk_list3.png',
                                               ]),
                                         ],
                                       )
@@ -286,6 +308,8 @@ class _detailpageState extends State<detailpage> {
           ),
         ],
       ),
+
+      //membuat see more
       bottomNavigationBar: isShowReview
           ? null
           : isExpand
@@ -409,5 +433,7 @@ class _detailpageState extends State<detailpage> {
         ),
       ),
     );
+
+  animatedpos
   }
 }
